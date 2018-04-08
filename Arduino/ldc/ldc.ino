@@ -12,6 +12,7 @@ LiquidCrystal lcd (rs, en, d4, d5, d6, d7);
 int stage = 0;
 int state = 0, old_val = 0;
 const int BUTTON = 42, LED = 13;
+int old_millis;
 
 void setup() {
   lcd.begin (16, 2); //LDC's number of cols and rows
@@ -30,15 +31,14 @@ int repeat_button () {
   }
   old_val = val;
 
-  if (state) { //passar al server que sí repetició
-     digitalWrite (LED, HIGH);
-  }
+}
+
+void printing (string text, int ms) {
+  lcd.print (text);
+  delay (ms);
 }
 
 void loop() {
-  // set the cursor to col0, line 1
-  
-  // print de number of seconds since reset
 
   switch (stage) {
     case 0 :
@@ -48,8 +48,8 @@ void loop() {
       lcd.clear();
       //repeat_button();
       break;
-    case 1 :
       
+    case 1 :
       lcd.setCursor (2, 0);
       lcd.write("Waiting for");
       lcd.setCursor (3, 1);
@@ -60,6 +60,7 @@ void loop() {
       lcd.clear();
       stage++;
       break;
+      
     case 2 :
       lcd.setCursor (0, 4);
       lcd.print("Is it..?");
@@ -71,20 +72,29 @@ void loop() {
         lcd.print(code);
         stage++;
       }
-      
-      
-      delay (100);
-      stage--;
+      delay (1500);
+      old_millis = millis();
       break;
+      
     case 3 :
-      lcd.setCursor (0, 0);
-      lcd.print ("Repeat photo");
+      int dif = millis() - old_millis();
+      if (dif < 3000 && repeat_button) {
+        lcd.setCursor (0, 0);
+        printing ("Repeat photo in", 1500);
+        printing ("1", 500);
+        printing ("2", 500);
+        printing ("3", 250);
+        Serial.print("rept_photo"); 
+        stage = 2;
+      }
+      else if (dif > 3000) stage = 4;
+      break;
+     
     case 4 :
-    case 5 :
-    case 6 :
-    case 7 :*/
+      lcd.setCursor (0, 0);
+      printing ("Prepare your next product", 2500);
+      stage = 1;
+      break;
   }
-  
-  stage++;
-  stage %= 2;
+  stage %= 5;
 }
