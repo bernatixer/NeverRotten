@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateActivity">
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="347dp"
+        android:layout_height="97dp"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+
+    <TextView
+        android:id="@+id/name3"
+        android:layout_width="269dp"
+        android:layout_height="25dp"
+        android:text="INSERT AN EXPIRY DATE:"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/image_view"
+        android:layout_width="197dp"
+        android:layout_height="229dp"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.502" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="343dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:elevation="8dp"
+        android:text="ADD"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="348dp"
+        android:layout_height="68dp"
+        android:backgroundTint="@color/colorAccent"
+        android:elevation="8dp"
+        android:text="DELETE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.965" />
+
+
+</android.support.constraint.ConstraintLayout>
