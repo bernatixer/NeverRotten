@@ -46,6 +46,6 @@ Dreaqdp
 
 > I've focused on hardware part. I have tried making the Dragonboard 820c become the main hardware part, but we had a lot of problems and I started with Arduino; I made all the circuits for LCD, it's code, tried to configure Wifi's modul and, as last option, configure an SPI connection Arduino-Raspberry Pi Zero with python.
 
-LordSantAnna
+[LordSantAnna](https://github.com/adriacabeza)
 
 > I worked on the Android App including the UI, the backend and the interaction with the Firebase Database. 
